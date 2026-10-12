@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f6fb">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <header class="page-header">
+            <p class="eyebrow">A little more organized</p>
+            <h1>My todo list</h1>
+            <p class="page-intro">Make space for what matters. Add a task to get started.</p>
+        </header>
+
+        <section class="todo-card" aria-labelledby="form-heading">
+            <h2 id="form-heading">Add a task</h2>
+            <form id="todo-form" novalidate>
+                <div class="field">
+                    <label for="title">Task title <span aria-hidden="true">*</span></label>
+                    <input id="title" name="title" type="text" placeholder="e.g. Plan the week" required>
+                </div>
+
+                <div class="field">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="3" placeholder="Add a few details (optional)"></textarea>
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option>Low</option>
+                            <option selected>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="due-date">Due date</label>
+                        <input id="due-date" name="dueDate" type="date">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="category">Category</label>
+                    <select id="category" name="category">
+                        <option selected>Personal</option>
+                        <option>Work</option>
+                        <option>Study</option>
+                        <option>Shopping</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <p id="form-message" class="form-message" role="alert" aria-live="polite"></p>
+                <button class="add-button" type="submit">Add task</button>
+            </form>
+        </section>
+
+        <section id="tasks-section" class="tasks-section" aria-labelledby="tasks-heading" hidden>
+            <div class="tasks-heading">
+                <h2 id="tasks-heading">Your tasks</h2>
+                <span id="task-count" class="task-count"></span>
+            </div>
+            <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        </section>
+    </main>
+</body>
+</html>
